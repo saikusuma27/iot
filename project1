@@ -1,0 +1,51 @@
+import random
+import time
+
+# Pump state
+pump_on = False
+
+# Moisture threshold (0–100)
+threshold = 20   # if moisture < 20 → pump ON
+
+# Number of cycles before stopping
+max_cycles = 15
+count = 0
+
+def get_moisture():
+    """Simulated soil moisture sensor."""
+    return random.randint(10, 40)  # random moisture value
+
+def control_pump(moisture):
+    global pump_on
+
+    if moisture < threshold:
+        pump_on = True
+    else:
+        pump_on = False
+
+    return pump_on
+
+print("🌱 SMART IRRIGATION SYSTEM (Simulation Mode)")
+print("------------------------------------------------")
+print(f"Moisture Threshold Set To: {threshold}%")
+print(f"System Status: RUNNING for {max_cycles} cycles")
+print("------------------------------------------------\n")
+
+while count < max_cycles:
+    moisture_value = get_moisture()
+    pump_state = control_pump(moisture_value)
+
+    print(f"[Sensor Update] Soil Moisture Reading: {moisture_value}%")
+
+    if pump_state:
+        print("→ Pump Status: ON (Soil is dry, moisture below threshold)")
+    else:
+        print("→ Pump Status: OFF (Soil is wet, moisture above threshold)")
+
+    print(f"Threshold Reference: Moisture must stay ABOVE {threshold}% to keep pump OFF.")
+    print("------------------------------------------------")
+
+    time.sleep(1)
+    count += 1  # increase count each cycle
+
+print("\n Simulation finished after", max_cycles, "cycles.")
