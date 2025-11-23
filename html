@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Irrigation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🌱 Smart Irrigation System</h1>
+
+    <div class="card">
+        <h2>Soil Moisture Level</h2>
+        <div id="moistureValue">-- %</div>
+    </div>
+
+    <div class="card">
+        <h2>Pump Status</h2>
+        <div id="pumpStatus">OFF</div>
+
+        <button onclick="manualPump('ON')" class="btn on">Turn ON</button>
+        <button onclick="manualPump('OFF')" class="btn off">Turn OFF</button>
+    </div>
+
+    <div class="card">
+        <h2>Mode</h2>
+        <button onclick="toggleMode()" id="modeBtn" class="btn auto">AUTO MODE</button>
+        <p id="modeText">Current Mode: Automatic</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
