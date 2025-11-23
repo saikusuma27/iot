@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef7f1;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.container {
+    width: 450px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2d6a4f;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#moistureValue {
+    font-size: 40px;
+    font-weight: bold;
+    color: #40916c;
+}
+
+#pumpStatus {
+    font-size: 32px;
+    color: #1b4332;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 12px 18px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.on { background: #2a9d8f; }
+.off { background: #d62828; }
+.auto { background: #264653; }
+
+.btn:hover { opacity: 0.8; }
